@@ -1,11 +1,12 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+
+# __author__ = "Sondos Issa , with help from "john" and google search.
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -25,11 +26,16 @@ __author__ = "???"
 #   [1, 2, 2, 3] -> [1, 2, 3]
 # You may create a new list or modify the passed in list.
 # Hint: Don't use set()
+# s = [1,2,3]
 
 
 def remove_adjacent(nums):
-    # your code here
-    return
+    s = []
+    for num in nums:
+        if len(s) == 0 or num != s[-1]:
+            s.append(num)
+
+    return s
 
 
 # E. zip_merge
@@ -43,8 +49,8 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-    # your code here
-    return
+    result = list(map("".join, zip(list1, list2)))
+    return result
 
 
 # F. empty_filter
@@ -57,8 +63,8 @@ def zip_merge(list1, list2):
 
 
 def empty_filter(list1):
-    # your code here
-    return
+    result = list(filter(None, list1))
+    return result
 
 
 # G. linear_merge
@@ -73,8 +79,8 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    list1.extend(list2)
+    return sorted(list1)
 
 
 # Provided simple test() function used in main() to print
