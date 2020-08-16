@@ -6,7 +6,7 @@ Kenzie assignment: List2
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
 
-# __author__ = "Sondos Issa , with help from "john" and google search.
+# __author__ = "Sondos Issa , with help from "john" and "Howard".
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -79,12 +79,24 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-    list1.extend(list2)
-    return sorted(list1)
+    Index1 = 0
+    Index2 = 0
+    words_list = []
+
+    while Index1 < len(list1) and Index2 < len(list2):
+        if list1[Index1] < list2[Index2]:
+            words_list.append(list1[Index1])
+            Index1 += 1
+        else:
+            words_list.append(list2[Index2])
+            Index2 += 1
+    return words_list + list1[Index1:] + list2[Index2:]
 
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
+
 def test(got, expected):
     if got == expected:
         prefix = ' OK '
